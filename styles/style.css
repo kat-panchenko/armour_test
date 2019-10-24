@@ -21,6 +21,7 @@ h1, h2, h3, h4, p {
         box-sizing: border-box;
         min-height: 100vh;
         /*font-size: calc(1vw + 0.6em);*/
+        overflow: hidden;
     }
 
     .wrapper {
@@ -74,6 +75,10 @@ h1, h2, h3, h4, p {
         background-color: #5540FB;
         color: white;
         border-radius: 50%;
+    }
+    button.calendar {
+        background: url("../images/calendar.png");
+        outline: none;
     }
 
     form {
