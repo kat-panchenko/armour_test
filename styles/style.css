@@ -1,0 +1,462 @@
+@font-face {
+    font-family: 'Inter UI Regular';
+    src: url(../fonts/Inter-UI-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Inter UI Bold';
+    src: url(../fonts/Inter-UI-Bold.woff) format('woff');
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (min-width: 375px) {
+    body {
+        position: relative;
+        margin: 0;
+        padding-top: 50px;
+        box-sizing: border-box;
+        min-height: 100vh;
+        overflow: hidden;
+        /*font-size: calc(1vw + 0.6em);*/
+    }
+
+    .wrapper {
+        margin: 0 auto;
+        width: 320px;
+    }
+
+    input::placeholder {
+        font-size: 20px;
+        color: #5c5c5c;
+        opacity: .3;
+    }
+
+    input:placeholder-shown {
+        color: #5540FB;
+    }
+
+    .cards, .tabs {
+        margin-left: 20px;
+    }
+
+    input.search {
+        width: 85%;
+        outline: none;
+        background: url(../images/plus-black-symbol.svg) no-repeat 0 center;
+        background-size: 16px;
+        padding: 0 30px;
+        border: none;
+        font: bold 28px 'Inter UI Bold', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
+        color: grey;
+        font-size: 15px;
+    }
+
+    li.active a {
+        color: #1D90FF;
+        font-weight: bold;
+        background: none;
+    }
+
+    button {
+        border: none;
+        background: none;
+        height: 100%;
+    }
+
+    button.mdc-icon-button {
+        background-color: #5540FB;
+        color: white;
+        border-radius: 50%;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+
+    button.mdc-icon-button, .calendar {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .tab_wrapper {
+        display: none;
+    }
+
+    li {
+        margin: 0 10px;
+        padding: 10px 15px;
+    }
+
+    ul.nav_tabs {
+        color: grey;
+        font-family: "Inter UI Regular", sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 20px;
+        display: flex;
+        width: 100%;
+        list-style-type: none;
+        margin: 0 0 30px 0;
+        justify-content: space-evenly;
+    }
+
+    li.active {
+        border-bottom: 2px solid #1e90ff;
+    }
+
+    .cards {
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: flex-end;
+        color: white;
+        padding: 16px;
+        min-width: 300px;
+        margin-right: 16px;
+        height: 120px;
+    }
+
+    .card h2 {
+        font-family: 'Inter UI Bold', sans-serif;
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .card p {
+        font-family: 'Inter UI Regular', sans-serif;
+        font-size: 10px;
+        opacity: .8;
+    }
+
+    .card_first {
+        background: url("../images/view1.jpg") no-repeat 0 0;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    .card_second {
+        background: url("../images/view2.jpg") no-repeat 0 0;
+        border-radius: 20px;
+    }
+
+    i.checked {
+        top: 50%;
+        left: 46%;
+        position: absolute;
+        opacity: .8;
+    }
+
+    .circle {
+        position: absolute;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        background-color: #1e90ff;
+        border-radius: 50%;
+    }
+
+    .planner_list > .circle:nth-last-of-type(2) {
+        opacity: .5;
+    }
+
+    .list_card {
+        position: relative;
+    }
+
+    .line {
+        position: absolute;
+        top: 38px;
+        left: -24px;
+        width: 2px;
+        height: 90px;
+        background-color: #1e90ff;
+        opacity: .2;
+    }
+
+    .planner_list {
+        padding-left: 32px;
+        position: relative;
+    }
+
+    .planner_title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+    }
+
+    .planner_title h3 {
+        font-size: 22px;
+        font-family: "Inter UI Bold", sans-serif;
+        font-weight: bold;
+    }
+
+    time {
+        font-family: "Oxygen", sans-serif;
+        font-weight: 900;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .list_card {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 27px;
+    }
+
+    .hotel_image {
+        height: 83px;
+        width: 133px;
+        color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter UI Bold", sans-serif;
+        margin-right: 15px;
+    }
+
+    .hotel_image h3 {
+        font-size: 18px;
+        opacity: .7;
+    }
+
+    .hotel_image.hotel1 {
+        background: url("../images/helsinki.png") no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .hotel_image.hotel2 {
+        background: url("../images/saltvik.jpg") no-repeat 0 0;
+        background-size: contain;
+    }
+
+    .hotel_card {
+        display: flex;
+    }
+
+    .hotel_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: grey;
+        font-family: "Oxygen", sans-serif;
+    }
+
+    .hotel_info i {
+        color: #1e90ff;
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+    .hotel_info div {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    .hotel_info h4 {
+        color: black;
+        font-family: "Inter UI Bold", sans-serif;
+    }
+
+    footer {
+        padding: 10px 0 35px 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    footer button {
+        color: #1e90ff;
+        font-size: 20px;
+        outline: none;
+    }
+
+    footer .add {
+        font-size: 56px;
+        color: #5540FB;
+    }
+    .add:hover, button:hover {
+        cursor: pointer;
+    }
+
+    #validation_form {
+        position: absolute;
+        display: none;
+        width: 320px;
+        flex-direction: column;
+        align-items: start;
+        font-family: Oxygen, sans-serif;
+        left: 3%;
+        top: 15%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 3px 5px 0 rgba(153, 153, 153, 1);
+        border-radius: 5px;
+    }
+
+    #validation_form label {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    #validation_form input {
+        width: 288px;
+        padding: 10px 5px;
+        border-radius: 5px;
+        border: 2px solid #E6E6E6;
+        margin-top: 5px;
+    }
+
+    #validation_form input::placeholder {
+        color: #5c5c5c;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    #validation_form input:focus {
+        outline-color: #1E90FF;
+    }
+
+    #validation_form select option {
+        border: none;
+    }
+
+    #validation_form select option:hover {
+        background-color: #1D90FF;
+    }
+
+    #validation_form select {
+        width: 182px;
+        border-radius: 5px;
+        border: 2px solid #1D90FF;
+        padding: 10px 5px;
+        font-weight: bold;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background: url("../images/arrow.svg") no-repeat 11.5em 50%;
+        background-size: .7em, 100%;
+    }
+
+    input#birthday {
+        border: 2px solid #1D90FF;
+    }
+
+    #message {
+        border: 2px solid #E6E6E6;
+        font-family: "Inter UI Bold", sans-serif;
+        color: grey;
+        padding: 10px 15px;
+        outline-color: #1D90FF;
+    }
+
+    #validation_form #agree {
+        font-size: 14px;
+        width: 20px;
+    }
+
+    #validation_form select:focus {
+        outline: 2px solid #1D90FF;
+        border-radius: 3px;
+    }
+
+    #validation_form #submit {
+        padding: 10px 20px;
+        background-color: #1D90FF;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Inter UI Bold", sans-serif;
+        letter-spacing: 1px;
+        border-radius: 3px;
+    }
+
+    #validation_form #submit:hover {
+        background-color: #1565B2;
+    }
+
+    .invalid_input {
+        outline: 2px solid #DF2242;
+        background: url(../images/attention.svg) no-repeat 95% 50%;
+        background-size: 17px 17px;
+    }
+
+    .valid_input {
+        outline: 2px solid #19A957;
+        background: url(../images/done.svg) no-repeat 95% 50%;
+        background-size: 17px 17px;
+    }
+
+    .active {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 820px) {
+
+    .wrapper {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    .nav-tabs {
+        min-width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .tab-content {
+        justify-content: center;
+    }
+
+    input.search {
+        width: 90%;
+    }
+
+    footer {
+        padding: 150px 0 80px 0;
+    }
+
+    .planner_list {
+        display: flex;
+    }
+
+    .list_card {
+        margin-right: 50px;
+    }
+
+    #validation_form {
+        position: absolute;
+        display: none;
+        min-width: 300px;
+        flex-direction: column;
+        align-items: start;
+        font-family: Oxygen, sans-serif;
+        margin: 0 auto;
+        left: 40%;
+        top: 15%;
+        background-color: white;
+        padding: 30px;
+        z-index: 10;
+    }
+}

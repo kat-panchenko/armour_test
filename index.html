@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Front-End Test</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="wrapper">
+        <form id="search_form">
+                <input type="text" class="search" id="search-text" placeholder="Country">
+            <button type="button" id="search_btn" class="mdc-icon-button material-icons">search_circle</button>
+        </form>
+    </div>
+</header>
+<main>
+    <section class="tabs">
+        <section class="row">
+            <ul class="nav_tabs">
+                <li class="active"><a href="#tab-1">Planner</a></li>
+                <li class=""><a href="#tab-2">Coming soon</a></li>
+                <li class=""><a href="#tab-3">Popular</a></li>
+            </ul>
+            <div class="tab-content cards">
+                <div id="tab-1" class="tab_wrapper active">
+                    <div class="card card_first">
+                        <i class="material-icons md-18 checked">check_circle_outline</i>
+                        <h2>Turku</h2>
+                        <p>A city on the southwest coast of Finland</p>
+                    </div>
+                </div>
+
+                <div id="tab-2" class="tab_wrapper">
+                    <div class="card card_second">
+                        <h2>Turku</h2>
+                        <p>A city on the southwest coast of Finland</p>
+                    </div>
+                </div>
+
+                <div id="tab-3" class="tab_wrapper">
+                    <div class="card card_first">
+                        <h2>Turku</h2>
+                        <p>A city on the southwest coast of Finland</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="planner">
+        <div class="wrapper">
+            <div class="planner_title">
+                <h3>Planner</h3>
+                <button class="calendar"><img src="images/calendar.png" alt="calendar"></button>
+            </div>
+
+            <div class="planner_list">
+                <div class="circle"></div>
+
+                <div class="list_card">
+                    <div class="line"></div>
+                    <time datetime="2019-09-06 - 2019-09-14">Sep 06 - Sep 14</time>
+                    <div class="hotel_card">
+                        <div class="hotel_image hotel1">
+                            <h3>Helsinki</h3>
+                        </div>
+                        <div class="hotel_info">
+                            <h4>Hotel Kämp</h4>
+                            <div><i class="material-icons">room</i>
+                                <p class="address">Pohjoisesplanadi 29</p></div>
+                            <div><i class="material-icons">phone</i>
+                                <p class="phone_number">+36 7648 849</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="circle"></div>
+
+                <div class="list_card">
+                    <div class="line"></div>
+                    <time datetime="2019-09-16 - 2019-09-24">Sep 16 - Sep 24</time>
+                    <div class="hotel_card">
+                        <div class="hotel_image hotel2">
+                            <h3>Saltvik</h3>
+                        </div>
+                        <div class="hotel_info">
+                            <h4>Kvarnbo Gästhem</h4>
+                            <div><i class="material-icons">room</i>
+                                <p class="address">Kyrkvägen 48</p></div>
+                            <div><i class="material-icons">phone</i>
+                                <p class="phone_number">+36 7489 820</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<form id="validation_form">
+    <label for="first_name">
+        First name: <input type="text" name="name" id="first_name" placeholder="First name" required>
+    </label>
+    <label for="last_name">
+        Last name: <input type="text" name="surname" id="last_name" placeholder="Second name" required>
+    </label>
+    <label for="birthday">
+        Birth date: <input type="date" name="date" id="birthday" required>
+    </label>
+    <label for="number">
+        Phone number:
+        <select id="Country" name="Country">
+            <option value="000" selected="selected">Select a country</option>
+            <option value="+380">Ukraine +38</option>
+        </select>
+    <input type="tel" name="number" id="number" minlength="9" maxlength="12" placeholder="0631234567" required>
+    </label>
+    <label for="message">
+        <textarea id="message" rows="5" cols="36">Please enter your message...</textarea>
+    </label>
+    <label for="agree"><input type="checkbox" id="agree" required> I agree to the terms of service</label>
+ <button type="submit" id="submit">Send</button>
+</form>
+
+<footer>
+    <button><i class="material-icons">home</i></button>
+    <button><i class="material-icons add" id="add_button">add_circle</i></button>
+    <button><i class="material-icons">person_outline</i></button>
+</footer>
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script rel="script" src="js/script.js"></script>
+</body>
+</html>
