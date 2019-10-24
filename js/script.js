@@ -36,14 +36,14 @@ window.addEventListener("load", function() {
         tabs[i].addEventListener("click", activeTab);
     }
 
-  /*  function telephoneCheck(str) {
+    function telephoneCheck(str) {
     const inputNumber = contactForm.querySelector('#number');
         let number = new RegExp(/^\(?(\d{2})?(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{2}[-|\S]\d{2}$/);
-        if(inputNumber.matches(number)) {
+        if(inputNumber.value.match(number)) {
             inputNumber.classList.add('valid_input');
         }
         return number.test(str);
-    }*/
+    }
 
   const textarea = contactForm.querySelector('textarea');
   textarea.addEventListener('click', () => {

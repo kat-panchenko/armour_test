@@ -20,7 +20,6 @@ h1, h2, h3, h4, p {
         padding-top: 50px;
         box-sizing: border-box;
         min-height: 100vh;
-        overflow: hidden;
         /*font-size: calc(1vw + 0.6em);*/
     }
 
