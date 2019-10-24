@@ -46,13 +46,25 @@ window.addEventListener("load", function() {
     }*/
 
   const textarea = contactForm.querySelector('textarea');
-  console.log(textarea);
   textarea.addEventListener('click', () => {
       textarea.value = '';
   });
 
-    const submitBtn = document.querySelector('#submit');
-    submitBtn.addEventListener('click', () => {
+  function modal() {
+      const submitBtn = document.querySelector('#submit');
+      submitBtn.addEventListener('click', () => {
 
-    });
+          const modalWrapper = document.querySelector('.modal_wrapper');
+          const modalWindow = document.createElement('div');
+
+          modalWindow.className = '';
+          modalWindow.innerHTML = `  
+                                  <div class="modal_info">
+                                  <h3>Successfully! We\`ve received your request!</h3>
+                                  </div>`;
+
+          modalWrapper.style.display = 'block';
+          modalWrapper.appendChild(modalWindow);
+      });
+  } setTimeout(modal, 5000);
 });

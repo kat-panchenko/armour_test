@@ -411,6 +411,21 @@ h1, h2, h3, h4, p {
     .active {
         display: block;
     }
+
+    .modal_wrapper {
+        display: none;
+        padding: 30px 20px;
+        color: #1D90FF;
+        font-family: "Inter UI Bold", sans-serif;
+        text-align: center;
+        position: absolute;
+        z-index: 20;
+        left: 2%;
+        top: 35%;
+        background: white;
+        box-shadow: 0 3px 5px 0 rgba(153, 153, 153, 1);
+        border-radius: 5px;
+    }
 }
 
 @media screen and (min-width: 820px) {
