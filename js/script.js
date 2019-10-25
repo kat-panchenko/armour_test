@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
 
     const search = document.querySelector('.search'),
         searchBtn = document.querySelector('#search_btn');
@@ -7,7 +7,6 @@ window.addEventListener("load", function() {
         addForm = document.querySelector('#add_button');
 
     searchBtn.addEventListener('click', () => {
-        const searchText = new RegExp(search.value.trim(), 'i');
         search.value = '';
     });
 
@@ -16,6 +15,7 @@ window.addEventListener("load", function() {
     });
 
     let tabs = document.querySelectorAll("ul.nav_tabs > li");
+
     function activeTab(event) {
         for (let i = 0; i < tabs.length; i++) {
             tabs[i].classList.remove("active");
@@ -27,44 +27,70 @@ window.addEventListener("load", function() {
         for (let i = 0; i < tabWrapper.length; i++) {
             tabWrapper[i].classList.remove("active");
         }
-        let anchorReference = event.target;
-        let activePaneId = anchorReference.getAttribute("href");
-        let activePane = document.querySelector(activePaneId);
+        let anchor = event.target;
+        let activeId = anchor.getAttribute("href");
+        let activePane = document.querySelector(activeId);
         activePane.classList.add("active");
     }
+
     for (let i = 0; i < tabs.length; i++) {
         tabs[i].addEventListener("click", activeTab);
     }
 
-    function telephoneCheck(str) {
-    const inputNumber = contactForm.querySelector('#number');
-        let number = new RegExp(/^\(?(\d{2})?(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{2}[-|\S]\d{2}$/);
-        if(inputNumber.value.match(number)) {
-            inputNumber.classList.add('valid_input');
-        }
-        return number.test(str);
+    {
+        const textarea = contactForm.querySelector('textarea');
+        textarea.addEventListener('click', () => {
+            textarea.value = '';
+        });
     }
 
-  const textarea = contactForm.querySelector('textarea');
-  textarea.addEventListener('click', () => {
-      textarea.value = '';
-  });
+    function phoneNumber() {
+        const inputNumber = contactForm.querySelector('#number');
+        inputNumber.onblur = function () {
+            let number = new RegExp(/^\(?(\d{2})?(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{2}[-|\S]\d{2}$/);
+            if (!this.value.match(number)) {
+                this.classList.add('invalid_input');
+                this.message.focus();
+            }
+        };
+        inputNumber.onfocus = function () {
+            if (this.classList.contains('invalid_input')) {
+                this.classList.remove('invalid_input');
+            }
+        }
+    }
 
-  function modal() {
-      const submitBtn = document.querySelector('#submit');
-      submitBtn.addEventListener('click', () => {
+    phoneNumber();
+    validation();
 
-          const modalWrapper = document.querySelector('.modal_wrapper');
-          const modalWindow = document.createElement('div');
+    function showModal() {
+        const modalWrapper = document.querySelector('.modal_wrapper');
+        const modalWindow = document.createElement('div');
 
-          modalWindow.className = '';
-          modalWindow.innerHTML = `  
+        modalWindow.className = '';
+        modalWindow.innerHTML = `  
                                   <div class="modal_info">
                                   <h3>Successfully! We\`ve received your request!</h3>
                                   </div>`;
 
-          modalWrapper.style.display = 'block';
-          modalWrapper.appendChild(modalWindow);
-      });
-  } setTimeout(modal, 5000);
+        modalWrapper.style.display = 'block';
+        modalWrapper.appendChild(modalWindow);
+    }
+
+    function validation() {
+        const submitBtn = contactForm.querySelector('#submit');
+        submitBtn.addEventListener('click', () => {
+
+            const inputs = contactForm.querySelectorAll('.required');
+            for (let input of inputs) {
+                if (!input.value) {
+                    input.classList.add('invalid_input');
+                    input.message.focus();
+                }
+            }
+            contactForm.style.display = 'none';
+            showModal();
+        });
+
+    }
 });

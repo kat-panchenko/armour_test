@@ -99,30 +99,31 @@
         </div>
     </section>
 </main>
-<form id="validation_form">
+<form id="validation_form" action="#">
     <label for="first_name">
-        First name: <input type="text" name="name" id="first_name" placeholder="First name" required>
+        First name: <input type="text" class="required" name="name" id="first_name" placeholder="First name" required>
     </label>
     <label for="last_name">
-        Last name: <input type="text" name="surname" id="last_name" placeholder="Second name" required>
+        Last name: <input type="text" class="required" name="name" id="last_name" placeholder="Second name" required>
     </label>
     <label for="birthday">
-        Birth date: <input type="date" name="date" id="birthday" required>
+        Birth date: <input type="date" class="required" name="date" id="birthday" required>
     </label>
     <label for="number">
         Phone number:
-        <select id="Country" name="Country">
+        <select id="country" name="country">
             <option value="000" selected="selected">Select a country</option>
             <option value="+380">Ukraine +38</option>
         </select>
-    <input type="tel" name="number" id="number" minlength="9" maxlength="12" placeholder="0631234567" required>
+    <input type="tel" class="required" name="number" id="number" minlength="10" maxlength="12" placeholder="0631234567" required>
     </label>
     <label for="message">
-        <textarea id="message" rows="5" cols="36">Please enter your message...</textarea>
+        <textarea id="message" name="message" rows="5" cols="36">Please enter your message...</textarea>
     </label>
     <label for="agree"><input type="checkbox" id="agree" required> I agree to the terms of service</label>
- <button type="submit" id="submit">Send</button>
+    <input type="submit" name="feedbackForm" id="submit" value="Send">
 </form>
+<div id="error"></div>
 <div class="modal_wrapper"></div>
 <footer>
     <button><i class="material-icons">home</i></button>

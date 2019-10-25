@@ -311,7 +311,7 @@ h1, h2, h3, h4, p {
         flex-direction: column;
         align-items: start;
         font-family: Oxygen, sans-serif;
-        left: 3%;
+        left: 5%;
         top: 15%;
         background-color: white;
         padding: 20px;
@@ -395,6 +395,8 @@ h1, h2, h3, h4, p {
         font-family: "Inter UI Bold", sans-serif;
         letter-spacing: 1px;
         border-radius: 3px;
+        border: none;
+        width: 100%;
     }
 
     #validation_form #submit:hover {
@@ -402,15 +404,17 @@ h1, h2, h3, h4, p {
     }
 
     .invalid_input {
-        outline: 2px solid #DF2242;
+        outline: none;
         background: url(../images/attention.svg) no-repeat 95% 50%;
         background-size: 17px 17px;
+        box-shadow: 0 0 0  2px rgba(223,34,66,1);
     }
 
     .valid_input {
-        outline: 2px solid #19A957;
+        outline: none;
         background: url(../images/done.svg) no-repeat 95% 50%;
         background-size: 17px 17px;
+        box-shadow: 0 0 0  2px rgba(223,34,66,1);
     }
 
     .active {
@@ -420,14 +424,14 @@ h1, h2, h3, h4, p {
     .modal_wrapper {
         display: none;
         padding: 30px 20px;
-        color: #1D90FF;
+        color: white;
         font-family: "Inter UI Bold", sans-serif;
         text-align: center;
         position: absolute;
         z-index: 20;
         left: 2%;
         top: 35%;
-        background: white;
+        background-color: #1D90FF;
         box-shadow: 0 3px 5px 0 rgba(153, 153, 153, 1);
         border-radius: 5px;
     }
@@ -478,5 +482,19 @@ h1, h2, h3, h4, p {
         background-color: white;
         padding: 30px;
         z-index: 10;
+    }
+    .modal_wrapper {
+        display: none;
+        padding: 50px 20px;
+        color: white;
+        font-family: "Inter UI Bold", sans-serif;
+        text-align: center;
+        position: absolute;
+        z-index: 20;
+        left: 38%;
+        top: 35%;
+        background-color: #1D90FF;
+        box-shadow: 0 3px 5px 0 rgba(153, 153, 153, 1);
+        border-radius: 5px;
     }
 }
