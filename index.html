@@ -112,15 +112,17 @@
     <label for="number">
         Phone number:
         <select id="country" name="country">
-            <option value="000" selected="selected">Select a country</option>
+            <option value="000" selected="selected" class="required">Select a country</option>
             <option value="+380">Ukraine +38</option>
         </select>
     <input type="tel" class="required" name="number" id="number" minlength="10" maxlength="12" placeholder="0631234567" required>
     </label>
     <label for="message">
-        <textarea id="message" name="message" rows="5" cols="36">Please enter your message...</textarea>
+        <textarea id="message" class="required" name="message" rows="5" cols="36">Please enter your message...</textarea>
     </label>
-    <label for="agree"><input type="checkbox" id="agree" required> I agree to the terms of service</label>
+    <label for="agree">
+        <input class="required" type="checkbox"  id="agree" required> I agree to the terms of service
+    </label>
     <input type="submit" name="feedbackForm" id="submit" value="Send">
 </form>
 <div id="error"></div>

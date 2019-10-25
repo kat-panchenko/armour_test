@@ -414,7 +414,7 @@ h1, h2, h3, h4, p {
         outline: none;
         background: url(../images/done.svg) no-repeat 95% 50%;
         background-size: 17px 17px;
-        box-shadow: 0 0 0  2px rgba(223,34,66,1);
+        box-shadow: 0 0 0  2px #19A957;
     }
 
     .active {

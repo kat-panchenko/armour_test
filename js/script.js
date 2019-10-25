@@ -47,7 +47,7 @@ window.addEventListener("load", function () {
     function phoneNumber() {
         const inputNumber = contactForm.querySelector('#number');
         inputNumber.onblur = function () {
-            let number = new RegExp(/^\(?(\d{2})?(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{2}[-|\S]\d{2}$/);
+            let number = new RegExp(/\d{10}/g);
             if (!this.value.match(number)) {
                 this.classList.add('invalid_input');
                 this.message.focus();
@@ -66,31 +66,30 @@ window.addEventListener("load", function () {
     function showModal() {
         const modalWrapper = document.querySelector('.modal_wrapper');
         const modalWindow = document.createElement('div');
-
         modalWindow.className = '';
         modalWindow.innerHTML = `  
                                   <div class="modal_info">
                                   <h3>Successfully! We\`ve received your request!</h3>
                                   </div>`;
-
         modalWrapper.style.display = 'block';
         modalWrapper.appendChild(modalWindow);
     }
 
     function validation() {
         const submitBtn = contactForm.querySelector('#submit');
+        const inputs = contactForm.querySelectorAll('.required');
         submitBtn.addEventListener('click', () => {
-
-            const inputs = contactForm.querySelectorAll('.required');
             for (let input of inputs) {
                 if (!input.value) {
                     input.classList.add('invalid_input');
                     input.message.focus();
+                } else {
+                    input.classList.remove('invalid_input');
+                    input.classList.add('valid_input');
                 }
             }
             contactForm.style.display = 'none';
             showModal();
         });
-
     }
 });
