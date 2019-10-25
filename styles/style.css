@@ -171,14 +171,14 @@ h1, h2, h3, h4, p {
 
     .circle {
         position: absolute;
-        left: 0;
+        left: -12%;
         width: 18px;
         height: 18px;
         background-color: #1e90ff;
         border-radius: 50%;
     }
 
-    .planner_list > .circle:nth-last-of-type(2) {
+    .second_circle {
         opacity: .5;
     }
 
@@ -302,6 +302,14 @@ h1, h2, h3, h4, p {
     }
     .add:hover, button:hover {
         cursor: pointer;
+    }
+
+    .close_form {
+        outline: none;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        align-self: flex-end;
     }
 
     #validation_form {
@@ -463,6 +471,10 @@ h1, h2, h3, h4, p {
 
     .planner_list {
         display: flex;
+    }
+
+    .list_card > .circle:nth-last-of-type(2) {
+        left: 21.3%;
     }
 
     .list_card {

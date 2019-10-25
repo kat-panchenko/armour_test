@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Front-End Test</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -57,11 +57,9 @@
                 <h3>Planner</h3>
                 <button class="calendar"></button>
             </div>
-
             <div class="planner_list">
-                <div class="circle"></div>
-
                 <div class="list_card">
+                    <div class="circle"></div>
                     <div class="line"></div>
                     <time datetime="2019-09-06 - 2019-09-14">Sep 06 - Sep 14</time>
                     <div class="hotel_card">
@@ -77,9 +75,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="circle"></div>
-
                 <div class="list_card">
+                    <div class="circle second_circle"></div>
                     <div class="line"></div>
                     <time datetime="2019-09-16 - 2019-09-24">Sep 16 - Sep 24</time>
                     <div class="hotel_card">
@@ -100,6 +97,7 @@
     </section>
 </main>
 <form id="validation_form" action="#">
+    <button type="button" class="close_form"><img src="images/close.svg" alt="close"></button>
     <label for="first_name">
         First name: <input type="text" class="required" name="name" id="first_name" placeholder="First name" required>
     </label>
@@ -125,7 +123,6 @@
     </label>
     <input type="submit" name="feedbackForm" id="submit" value="Send">
 </form>
-<div id="error"></div>
 <div class="modal_wrapper"></div>
 <footer>
     <button><i class="material-icons">home</i></button>

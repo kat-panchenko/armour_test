@@ -1,21 +1,22 @@
 window.addEventListener("load", function () {
 
     const search = document.querySelector('.search'),
-        searchBtn = document.querySelector('#search_btn');
-
-    const contactForm = document.querySelector('#validation_form'),
+        searchBtn = document.querySelector('#search_btn'),
+        contactForm = document.querySelector('#validation_form'),
         addForm = document.querySelector('#add_button');
 
+    //очистка поискового поля как имитация поиска запроса
     searchBtn.addEventListener('click', () => {
         search.value = '';
     });
 
+    //открытие контактной формы при клике на кнопку "+"
     addForm.addEventListener('click', () => {
         contactForm.style.display = "flex";
     });
 
+    //активные табы
     let tabs = document.querySelectorAll("ul.nav_tabs > li");
-
     function activeTab(event) {
         for (let i = 0; i < tabs.length; i++) {
             tabs[i].classList.remove("active");
@@ -32,11 +33,13 @@ window.addEventListener("load", function () {
         let activePane = document.querySelector(activeId);
         activePane.classList.add("active");
     }
-
+    //активация таба при клике
     for (let i = 0; i < tabs.length; i++) {
         tabs[i].addEventListener("click", activeTab);
     }
 
+
+    //очистка плейсхолдера поля сообщения при клике
     {
         const textarea = contactForm.querySelector('textarea');
         textarea.addEventListener('click', () => {
@@ -44,6 +47,7 @@ window.addEventListener("load", function () {
         });
     }
 
+    //валидация номера телефона
     function phoneNumber() {
         const inputNumber = contactForm.querySelector('#number');
         inputNumber.onblur = function () {
@@ -59,10 +63,20 @@ window.addEventListener("load", function () {
             }
         }
     }
-
     phoneNumber();
     validation();
 
+    //закрытие формы по клику на крестик и очистка полей
+    const closeForm = contactForm.querySelector('.close_form');
+    closeForm.addEventListener('click', () => {
+        const inputs = contactForm.querySelectorAll('.required');
+        for (let input of inputs) {
+            input.value = '';
+        }
+        contactForm.style.display = 'none';
+    });
+
+    //показ модального окна после отправки валидной формы
     function showModal() {
         const modalWrapper = document.querySelector('.modal_wrapper');
         const modalWindow = document.createElement('div');
@@ -75,6 +89,7 @@ window.addEventListener("load", function () {
         modalWrapper.appendChild(modalWindow);
     }
 
+    //валидация формы
     function validation() {
         const submitBtn = contactForm.querySelector('#submit');
         const inputs = contactForm.querySelectorAll('.required');
